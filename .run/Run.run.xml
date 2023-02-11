@@ -2,7 +2,7 @@
   <configuration default="false" name="Run" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="program.Run" />
     <module name="GPACalculator.main" />
-    <option name="PROGRAM_PARAMETERS" value="90 85 80 90 20 91 15 80 40" />
+    <option name="PROGRAM_PARAMETERS" value="90 85 80 90 20 91 15 80 45" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>
