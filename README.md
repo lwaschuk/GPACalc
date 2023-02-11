@@ -4,6 +4,11 @@ GPACalculator is a Kotlin program that calculates your current grade in a course
 far and the percentage of the course that has been completed. It can also tell you what grade you need to receive 
 on the remaining assignments in order to achieve a desired grade.
 
+## Releases
+[![Release](https://img.shields.io/github/release/Napkinzz/GPACalc.svg?style=for-the-badge)](https://github.com/Napkinzz/GPACalc/releases)
+
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=for-the-badge)](LICENSE.md)
+
 ## Usage  
 To use GPACalculator, you need to pass it the grade cutoffs for A, A-, and B+ grades, followed by the grades and weight
 of the assignments you have completed so far. For example:
@@ -57,8 +62,10 @@ having to install Gradle or any other dependencies.
 
 ## Running the Application from a JAR downloaded from Releases
 
-You can also download the JAR file from the Releases section on GitHub, and run it locally on any machine that has 
+You can also download the JAR file from the [releases page][releases] section on GitHub, and run it locally on any machine that has 
 Java installed.
+
+[releases]:  https://github.com/Napkinzz/GPACalc/releases
 
 To run the JAR file, use the following command in your terminal:
 
