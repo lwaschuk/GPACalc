@@ -1,24 +1,74 @@
 # GPACalc
-To use in a script to check my grades fast. Allows me to specify grade cutoffs and its main use in in a termal startup script to give me a quick rundown on my current grades in every class. 
 
-## Usage 
-`java -jar SNAPSHOT.jar <grade : weight> <grade : weight> <grade : weight> ...etc`
+GradeCalc is a Kotlin program that calculates your current grade in a course based on the grades you have received so
+far and the percentage of the course that has been completed. It can also tell you what grade you need to receive 
+on the remaining assignments in order to achieve a desired grade.
 
-**__NOTE:__** You probably want to add to your .bashrc (or equivilant) so you can just update your grades in one place and don't have to re-enter them everytime. :shrug:
+## Usage  
+To use GradeCalc, you need to pass it the grade cutoffs for A, A-, and B+ grades, followed by the grades and weight
+of the assignments you have completed so far. For example:
+
+```bash
+./gradlew run --args='<A grade cutoff> <A- grade cutoff> <B+ grade cutoff> <grade1> <percentage1> <grade2> <percentage2> ... <gradeN> <percentageN>'
+```
+
+This will execute the program with the A, A-, and B+ grade cutoffs set at 90%, 85%, and 80%, respectively. You have 
+already completed three assignments, scoring 90% on an assignment worth 20% of the course, 91% on an assignment worth 
+15% of the course, and 80% on an assignment worth 45% of the course.  
+
+The program will calculate your current grade based on the completed assignments and tell you what grade you need to 
+receive on the remaining assignments in order to achieve an A, A-, or B+ grade.
+
+## Building and Running
+
+To build and run GradeCalc, you need to have Gradle installed. Simply run the following command in your terminal:
+
+```bash
+./gradlew run --args='90 85 80 90 20 91 15 80 45'
+```
+
+This will compile the code, build the application, and run it with the arguments you provided.
 
 
-## Input 
-`java -jar GPACalculator-1.0-SNAPSHOT-standalone.jar 90:10 90:20 60:30`
-## Output 
+Building a JAR and Running the Application
+
+If you want to build a JAR file of the application and run it on the command line, you can use Gradle to do this.
+
+To build the JAR file, run the following command in your terminal:
+
+```bash
+./gradlew fatJar
+```
+
+This will create a JAR file in the build/libs directory. The file will be named GPACalculator-1.1-standalone.jar
+
+To run the JAR file, use the following command:
+
+```bash
+java -jar build/libs/GPACalculator-1.1-standalone.jar 90 85 80 90 20 91 15 80 45
+```
+
+Replace `90 85 80 90 20 91 15 80 45` with the arguments you want to pass to the program.
+
+The JAR file contains all the necessary dependencies, so you can run it on any machine that has Java installed, without having to install Gradle or any other dependencies.
+
+## Example Execution
+### Input  
+
+```bash
+java -jar build/libs/GPACalculator-1.1-standalone.jar 90 85 80 90 20 91 15 80 45
+```
+
+### Output 
 ``` 
 Ingested:
-        Grade 90 worth 10 percent
-        Grade 90 worth 20 percent
-        Grade 60 worth 30 percent
+	Grade 90.0 worth 20.0 percent
+	Grade 91.0 worth 15.0 percent
+	Grade 80.0 worth 45.0 percent
 
-You need 112.70% on the remaining 40.0% of the course to finish with a A (90%)
-You need 100.20% on the remaining 40.0% of the course to finish with a A- (85%)
-You need 87.70% on the remaining 40.0% of the course to finish with a B+ (80%)
+You need 111.90% on the remaining 20.0% of the course to finish with a A (90.0%)
+You need 86.90% on the remaining 20.0% of the course to finish with a A- (85.0%)
+You need 61.90% on the remaining 20.0% of the course to finish with a B+ (80.0%)
 
-        ** You have 75.00% over 60.0% of the course completed *
+	** You have 84.56% over 80.0% of the course completed **
 ```
