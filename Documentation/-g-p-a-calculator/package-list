@@ -1,0 +1,21 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:grade_calculator////PointingToDeclaration/-g-p-a-calculator/grade_calculator/index.html
+$dokka.location:grade_calculator/Grade///PointingToDeclaration/-g-p-a-calculator/grade_calculator/-grade/index.html
+$dokka.location:grade_calculator/Grade/Grade/#kotlin.Double#kotlin.Double#kotlin.Double/PointingToDeclaration/-g-p-a-calculator/grade_calculator/-grade/-grade.html
+$dokka.location:grade_calculator/Grade/a/#/PointingToDeclaration/-g-p-a-calculator/grade_calculator/-grade/a.html
+$dokka.location:grade_calculator/Grade/aMinus/#/PointingToDeclaration/-g-p-a-calculator/grade_calculator/-grade/a-minus.html
+$dokka.location:grade_calculator/Grade/bPlus/#/PointingToDeclaration/-g-p-a-calculator/grade_calculator/-grade/b-plus.html
+$dokka.location:grade_calculator/GradeCalc///PointingToDeclaration/-g-p-a-calculator/grade_calculator/-grade-calc/index.html
+$dokka.location:grade_calculator/GradeCalc/GradeCalc/#/PointingToDeclaration/-g-p-a-calculator/grade_calculator/-grade-calc/-grade-calc.html
+$dokka.location:grade_calculator/GradeCalc/calculateNeededGrade/#kotlin.Double#kotlin.Double#kotlin.Double/PointingToDeclaration/-g-p-a-calculator/grade_calculator/-grade-calc/calculate-needed-grade.html
+$dokka.location:grade_calculator/GradeCalc/getGrade/#kotlin.Array[kotlin.String]/PointingToDeclaration/-g-p-a-calculator/grade_calculator/-grade-calc/get-grade.html
+$dokka.location:grade_calculator/GradeCalc/gradesLeft/#kotlin.Double#kotlin.Double#grade_calculator.Grade/PointingToDeclaration/-g-p-a-calculator/grade_calculator/-grade-calc/grades-left.html
+$dokka.location:program////PointingToDeclaration/-g-p-a-calculator/program/index.html
+$dokka.location:program//main/#kotlin.Array[kotlin.String]/PointingToDeclaration/-g-p-a-calculator/program/main.html
+$dokka.location:program/Run///PointingToDeclaration/-g-p-a-calculator/program/-run/index.html
+$dokka.location:program/Run/Run/#/PointingToDeclaration/-g-p-a-calculator/program/-run/-run.html
+$dokka.location:program/Run/run/#kotlin.Array[kotlin.String]/PointingToDeclaration/-g-p-a-calculator/program/-run/run.html
+grade_calculator
+program
+

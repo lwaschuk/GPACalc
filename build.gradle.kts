@@ -2,15 +2,18 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm") version "1.7.10"
+    id("org.jetbrains.dokka") version "1.7.20"
     application
 }
 
 group = "me.lukas"
-version = "1.0-SNAPSHOT"
+version = "1.1"
 
 repositories {
     mavenCentral()
 }
+
+apply(plugin="org.jetbrains.dokka")
 
 dependencies {
     testImplementation(kotlin("test"))
@@ -25,8 +28,9 @@ tasks.withType<KotlinCompile> {
 }
 
 application {
-    mainClass.set("MainKt")
+    mainClass.set("program.Run")
 }
+
 tasks {
     val fatJar = register<Jar>("fatJar") {
         dependsOn.addAll(listOf("compileJava", "compileKotlin", "processResources")) // We need this for Gradle optimization to work
@@ -39,7 +43,18 @@ tasks {
                 sourcesMain.output
         from(contents)
     }
+
     build {
         dependsOn(fatJar) // Trigger fat jar creation during build
+        dependsOn(dokkaHtml) // Create Doc's every build
+    }
+}
+
+tasks.dokkaHtml.configure {
+    outputDirectory.set(buildDir.resolve("Documentation"))
+    dokkaSourceSets {
+        configureEach{
+            includeNonPublic.set(true)
+        }
     }
 }
