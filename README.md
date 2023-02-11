@@ -7,7 +7,7 @@ on the remaining assignments in order to achieve a desired grade.
 ## Releases
 [![Release](https://img.shields.io/github/release/Napkinzz/GPACalc.svg?style=for-the-badge)](https://github.com/Napkinzz/GPACalc/releases)
 
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=for-the-badge)](LICENSE.md)
+[![Software License](https://img.shields.io/github/license/Napkinzz/GPACalc.svg?style=for-the-badge)](LICENSE.md)
 
 ## Usage  
 To use GPACalculator, you need to pass it the grade cutoffs for A, A-, and B+ grades, followed by the grades and weight
