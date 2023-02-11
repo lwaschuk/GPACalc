@@ -1,11 +1,11 @@
-# GPACalc
+# GPACalculator
 
-GradeCalc is a Kotlin program that calculates your current grade in a course based on the grades you have received so
+GPACalculator is a Kotlin program that calculates your current grade in a course based on the grades you have received so
 far and the percentage of the course that has been completed. It can also tell you what grade you need to receive 
 on the remaining assignments in order to achieve a desired grade.
 
 ## Usage  
-To use GradeCalc, you need to pass it the grade cutoffs for A, A-, and B+ grades, followed by the grades and weight
+To use GPACalculator, you need to pass it the grade cutoffs for A, A-, and B+ grades, followed by the grades and weight
 of the assignments you have completed so far. For example:
 
 ```bash
@@ -16,12 +16,12 @@ This will execute the program with the A, A-, and B+ grade cutoffs set at 90%, 8
 already completed three assignments, scoring 90% on an assignment worth 20% of the course, 91% on an assignment worth 
 15% of the course, and 80% on an assignment worth 45% of the course.  
 
-The program will calculate your current grade based on the completed assignments and tell you what grade you need to 
+GPACalculator will calculate your current grade based on the completed assignments and tell you what grade you need to 
 receive on the remaining assignments in order to achieve an A, A-, or B+ grade.
 
-## Building and Running
+## Building and Running with Gradle
 
-To build and run GradeCalc, you need to have Gradle installed. Simply run the following command in your terminal:
+To build and run GPACalculator, you need to have Gradle installed. Simply run the following command in your terminal:
 
 ```bash
 ./gradlew run --args='90 85 80 90 20 91 15 80 45'
@@ -29,10 +29,9 @@ To build and run GradeCalc, you need to have Gradle installed. Simply run the fo
 
 This will compile the code, build the application, and run it with the arguments you provided.
 
+## Building a JAR and Running the Application with Java
 
-Building a JAR and Running the Application
-
-If you want to build a JAR file of the application and run it on the command line, you can use Gradle to do this.
+If you want to build a JAR file of GPACalculator and run it on the command line, you can use Gradle to do this.
 
 To build the JAR file, run the following command in your terminal:
 
@@ -40,23 +39,44 @@ To build the JAR file, run the following command in your terminal:
 ./gradlew fatJar
 ```
 
-This will create a JAR file in the build/libs directory. The file will be named GPACalculator-1.1-standalone.jar
+This will create a JAR file in the build/libs directory. The file will be named GPACalculator.jar
 
 To run the JAR file, use the following command:
 
 ```bash
-java -jar build/libs/GPACalculator-1.1-standalone.jar 90 85 80 90 20 91 15 80 45
+java -jar build/libs/GPACalculator.jar 90 85 80 90 20 91 15 80 45 
 ```
 
-Replace `90 85 80 90 20 91 15 80 45` with the arguments you want to pass to the program.
+Replace `90 85 80 90 20 91 15 80 45` with the arguments you want to pass to the program.  
 
-The JAR file contains all the necessary dependencies, so you can run it on any machine that has Java installed, without having to install Gradle or any other dependencies.
+> Usage:
+> `<A grade cutoff> <A- grade cutoff> <B+ grade cutoff> <grade1> <percentage1> <grade2> <percentage2> ... <gradeN> <percentageN>`
+
+The JAR file contains all the necessary dependencies, so you can run it on any machine that has Java installed, without 
+having to install Gradle or any other dependencies.
+
+## Running the Application from a JAR downloaded from Releases
+
+You can also download the JAR file from the Releases section on GitHub, and run it locally on any machine that has 
+Java installed.
+
+To run the JAR file, use the following command in your terminal:
+
+```bash
+java -jar GPACalculator.jar 90 85 80 90 20 91 15 80 45 
+```
+
+Replace `90 85 80 90 20 91 15 80 45`  with the arguments you want to pass to the program.
+
+The JAR file contains all the necessary dependencies, so you can run it on any machine that has Java installed, without 
+having to install Gradle or any other dependencies.
+
 
 ## Example Execution
 ### Input  
 
 ```bash
-java -jar build/libs/GPACalculator-1.1-standalone.jar 90 85 80 90 20 91 15 80 45
+java -jar build/libs/GPACalculator.jar 90 85 80 90 20 91 15 80 45 
 ```
 
 ### Output 
