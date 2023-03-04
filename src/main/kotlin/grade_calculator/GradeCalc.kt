@@ -57,7 +57,7 @@ class GradeCalc {
         grades.forEachIndexed { index, requiredGrade ->
             val needGrade = calculateNeededGrade(totalGrade, remainingPercentage, requiredGrade)
             val stringNeedGrade = String.format("%.2f", needGrade)
-            println("Grade Needed: $stringNeedGrade%, for ${gradeNames[index]} ($requiredGrade%) overall")
+            println("Grade Needed: $stringNeedGrade% for ${gradeNames[index]} ($requiredGrade%) overall")
         }
     }
 
