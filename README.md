@@ -26,6 +26,13 @@ already completed three assignments, scoring 90% on an assignment worth 20% of t
 GPACalculator will calculate your current grade based on the completed assignments and tell you what grade you need to 
 receive on the remaining assignments in order to achieve an A, A-, or B+ grade.
 
+### Using the shell script(s) included in the repository (Probably make your own, these are just examples)
+
+1. `chmod +x {NAME}.sh` to make the script executable
+2. Make sure the script is in the same directory as the JAR file or make the script executable from anywhere by adding it as an env variable in your `.bashrc` or `.zshrc` file
+3. Add your own grades to the script 
+4. `./{NAME}.sh` to run the script
+
 ## Building and Running with Gradle
 
 To build and run GPACalculator, you need to have Gradle installed. Simply run the following command in your terminal:
