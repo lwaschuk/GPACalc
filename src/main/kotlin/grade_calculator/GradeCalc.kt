@@ -22,21 +22,22 @@ class GradeCalc {
         var totalGrade = 0.0
         var totalPercent = 0.0
 
-        println("Ingested:")
+        // uncomment if you want to see what was ingested.
+//        println("Ingested:")
         for (i in 3 until args.size step 2) {
             val assignmentGrade = args[i].toDouble()
             val percent = args[i + 1].toDouble()
-            println("\tGrade $assignmentGrade worth $percent percent")
+//            println("\tGrade $assignmentGrade worth $percent percent")
             totalPercent += percent
             totalGrade += (assignmentGrade * percent / 100)
         }
-        println()
+//        println()
         if (totalPercent < 100) {
             gradesLeft(totalPercent, totalGrade, gradeCutoff)
         }
         totalGrade /= totalPercent / 100
         val stringTotalGrade = String.format("%.2f", totalGrade)
-        println("\n\t** You have $stringTotalGrade% over $totalPercent% of the course completed **")
+        println("\n** Current Grade: $stringTotalGrade%, Completed: $totalPercent% **")
     }
 
     /**
@@ -56,7 +57,7 @@ class GradeCalc {
         grades.forEachIndexed { index, requiredGrade ->
             val needGrade = calculateNeededGrade(totalGrade, remainingPercentage, requiredGrade)
             val stringNeedGrade = String.format("%.2f", needGrade)
-            println("You need $stringNeedGrade% on the remaining $remainingPercentage% of the course to finish with a ${gradeNames[index]} ($requiredGrade%)")
+            println("Grade Needed: $stringNeedGrade%, for ${gradeNames[index]} ($requiredGrade%) overall")
         }
     }
 
