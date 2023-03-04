@@ -41,8 +41,7 @@ class GradeCalc {
 
         // if the percent is 100 print the letter grade obtained
         else {
-            println("** Final Grade: $stringTotalGrade%, Completed: $totalPercent% **")
-            println("Letter Grade: ${letterGrade(totalGrade, gradeCutoff)}")
+            println("** Final Grade: $stringTotalGrade%, Letter Grade: ${letterGrade(totalGrade, gradeCutoff)} **")
         }
     }
 
