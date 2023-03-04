@@ -22,25 +22,49 @@ class GradeCalc {
         var totalGrade = 0.0
         var totalPercent = 0.0
 
-        // uncomment if you want to see what was ingested.
-//        println("Ingested:")
+        // Calculate the total grade and total percentage
         for (i in 3 until args.size step 2) {
             val assignmentGrade = args[i].toDouble()
             val percent = args[i + 1].toDouble()
-//            println("\tGrade $assignmentGrade worth $percent percent")
             totalPercent += percent
             totalGrade += (assignmentGrade * percent / 100)
         }
-//        println()
-        if (totalPercent < 100) {
-            gradesLeft(totalPercent, totalGrade, gradeCutoff)
-        }
+        // Calculate the total grade as a percentage
         totalGrade /= totalPercent / 100
         val stringTotalGrade = String.format("%.2f", totalGrade)
-        println("\n** Current Grade: $stringTotalGrade%, Completed: $totalPercent% **")
+
+        // If the total percentage is less than 100, calculate the minimum grades needed
+        if (totalPercent < 100) {
+            gradesLeft(totalPercent, totalGrade, gradeCutoff)
+            println("** Current Grade: $stringTotalGrade%, Completed: $totalPercent% **")
+        }
+
+        // if the percent is 100 print the letter grade obtained
+        else {
+            println("** Final Grade: $stringTotalGrade%, Completed: $totalPercent% **")
+            println("Letter Grade: ${letterGrade(totalGrade, gradeCutoff)}")
+        }
     }
 
     /**
+     * Calculates the letter grade based on the total grade and grade cutoffs.
+     *
+     * @param totalGrade The total grade obtained so far
+     * @param gradeCutoff The grade cutoffs for an A, A-, and B+
+     * @return The letter grade obtained
+     * @author Lukas Waschuk
+     */
+    private fun letterGrade(totalGrade: Double, gradeCutoff: Grade): String {
+        return when {
+            totalGrade >= gradeCutoff.a -> "A"
+            totalGrade >= gradeCutoff.aMinus -> "A-"
+            totalGrade >= gradeCutoff.bPlus -> "B+"
+            else -> "F"
+        }
+    }
+
+
+    /*
      * Prints the minimum grade needed on the remaining percentage of the course
      * to finish with an A, A-, or B+.
      *
@@ -53,11 +77,10 @@ class GradeCalc {
         val remainingPercentage = 100 - totalPercent
         val grades = listOf(grade.a, grade.aMinus, grade.bPlus)
         val gradeNames = listOf("A", "A-", "B+")
-
-        grades.forEachIndexed { index, requiredGrade ->
+        grades.forEachIndexed { _, requiredGrade ->
             val needGrade = calculateNeededGrade(totalGrade, remainingPercentage, requiredGrade)
             val stringNeedGrade = String.format("%.2f", needGrade)
-            println("Grade Needed: $stringNeedGrade% for ${gradeNames[index]} ($requiredGrade%) overall")
+            println("Need $stringNeedGrade% on remaining $remainingPercentage% to get a $gradeNames[index] (${requiredGrade}%)")
         }
     }
 
